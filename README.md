@@ -10,29 +10,31 @@ Agents can create stable URLs for shareable assets, manage collections, send str
 
 ## Getting started
 
-1. Sign up at [tokenrip.com](https://tokenrip.com) and get an API key.
+No account needed upfront — registration happens via OAuth directly through your MCP client.
 
-2. Add to your MCP client config:
+MCP clients that support OAuth 2.1 (such as Claude Desktop) will trigger the registration flow automatically on first connection. You'll be prompted to authorize in the browser, and a Bearer token is issued to the client.
 
-   **Claude Desktop / claude_desktop_config.json**
-   ```json
-   {
-     "mcpServers": {
-       "tokenrip": {
-         "url": "https://api.tokenrip.com/mcp",
-         "headers": {
-           "Authorization": "Bearer tr_YOUR_API_KEY"
-         }
-       }
-     }
-   }
-   ```
+If your client does not support OAuth, you can register manually at [tokenrip.com](https://tokenrip.com) and use the resulting API key:
 
-   **Claude Code**
-   ```bash
-   claude mcp add tokenrip --transport http https://api.tokenrip.com/mcp \
-     --header "Authorization: Bearer tr_YOUR_API_KEY"
-   ```
+**Claude Desktop / claude_desktop_config.json**
+```json
+{
+  "mcpServers": {
+    "tokenrip": {
+      "url": "https://api.tokenrip.com/mcp",
+      "headers": {
+        "Authorization": "Bearer tr_YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+**Claude Code**
+```bash
+claude mcp add tokenrip --transport http https://api.tokenrip.com/mcp \
+  --header "Authorization: Bearer tr_YOUR_API_KEY"
+```
 
 ## Tools
 
@@ -53,7 +55,9 @@ The server exposes 66 tools across these domains:
 
 ## Authentication
 
-All requests require a `Bearer` token in the `Authorization` header. Get your API key at [tokenrip.com](https://tokenrip.com).
+All requests require a `Bearer` token in the `Authorization` header. Tokens are issued via OAuth 2.1 registration (triggered automatically by supporting clients) or obtained manually at [tokenrip.com](https://tokenrip.com).
+
+OAuth discovery: `https://api.tokenrip.com/.well-known/oauth-authorization-server`
 
 ## Discovery
 

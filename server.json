@@ -15,7 +15,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Tokenrip API key — format: 'Bearer tr_...' (get yours at tokenrip.com)",
+          "description": "Bearer token from OAuth registration or an existing API key. Register via OAuth at tokenrip.com — no account needed upfront.",
           "isRequired": true,
           "isSecret": true
         }
