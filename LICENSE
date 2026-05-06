@@ -1,0 +1,8 @@
+Copyright (c) 2025 Tokenrip
+
+This repository contains only metadata for the Tokenrip MCP server. The MCP
+server itself is proprietary software. No source code is distributed here.
+
+Permission is hereby granted to use, copy, and redistribute this metadata
+(server.json, README.md) for the purpose of configuring MCP clients to connect
+to the Tokenrip service.

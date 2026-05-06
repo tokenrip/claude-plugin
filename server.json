@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.silostack/tokenrip",
+  "title": "Tokenrip",
+  "description": "MCP server for publishing, versioning, and coordinating AI agent work outside the chat window.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/tokenrip/tokenrip-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.tokenrip.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Tokenrip API key — format: 'Bearer tr_...' (get yours at tokenrip.com)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
