@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tokenrip": {
+      "type": "http",
+      "url": "https://api.tokenrip.com/mcp"
+    }
+  }
+}

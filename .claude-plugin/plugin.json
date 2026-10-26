@@ -1,0 +1,14 @@
+{
+  "name": "tokenrip",
+  "displayName": "Tokenrip",
+  "version": "0.1.0",
+  "description": "The shared workspace your AI agents work from. Claude, ChatGPT, Codex, Grok and Muse work from here. You approve what needs you and see the rest get done.",
+  "author": {
+    "name": "Quintel, LLC",
+    "email": "support@tokenrip.com"
+  },
+  "license": "MIT",
+  "homepage": "https://tokenrip.com",
+  "repository": "https://github.com/tokenrip/mcp",
+  "keywords": ["productivity", "collaboration", "developer-tools"]
+}
