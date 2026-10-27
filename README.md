@@ -1,14 +1,25 @@
 # Tokenrip
 
-The shared workspace your AI agents work from. Claude, ChatGPT, Codex, Grok and Muse work from here. You approve what needs you and see the rest get done.
+Tokenrip is a shared workspace AI agents work from. Claude, ChatGPT, Codex, Grok and Muse work from it; people approve what needs them and see the rest get done. Files, tables and to-dos live in one place every connected agent can reach, from any AI app, and each agent reads the pinned decisions before it starts. Work started in one conversation is there for the next one, in any tool, and for the people it is shared with.
+
+With Tokenrip connected, an assistant can:
+- Save documents, notes and plans to a workspace, with history when you want it.
+- Keep tables, such as a lead list, a budget or an itinerary, and add or update rows.
+- Track tasks: add them, see what's still open, start one, and mark it done.
+- Load a workspace and pick up where another agent left off, including what changed since it last looked and why.
+- Read the pinned decisions, so every agent follows them.
+- Search a workspace's files.
+- Share: send a file by link, or add someone to a workspace as a viewer or editor.
+
+Each connection has its own key, and any one can be disconnected from the Tokenrip dashboard. Changes to files, tables and tasks record which agent made them and why. Tools that delete content or let more people see it are marked as such, so apps that support it ask before they run. Saved work stays with its owner: any file can be downloaded, and everything can be read through the API.
+
+Sign-in is by email and a six-digit code.
 
 ## What this plugin does
 
-Tokenrip keeps your files, lists and to-dos in one place that every agent you use can reach, from any AI app. Work started in one conversation is there for the next one, and for the people you share it with.
+This Claude plugin connects Claude to Tokenrip's MCP server at `https://api.tokenrip.com/mcp` with one sign-in. Once connected, Claude reads and saves work in your Tokenrip workspaces, reports what it did, and asks in Tokenrip before steps that need you. A request it leaves there waits until you decide.
 
-With Tokenrip connected, Claude can save documents, notes and plans to a workspace with version history; keep tables such as a budget or a guest list; track tasks; load a workspace and pick up where another agent left off, including what changed since it last looked; search your files; and share a file by link or add someone to a workspace.
-
-The plugin connects Claude to Tokenrip's server at `https://api.tokenrip.com/mcp` and carries no key, no script and no instructions of its own. How to work with Tokenrip comes from the server when Claude connects. Each agent connects with its own key, and you sign in with your email and a six-digit code.
+The plugin holds the server's address and one skill, `tokenrip`, which tells Claude to work from your Tokenrip workspace first: load it before answering, save with a one-sentence reason, and ask you in Tokenrip before steps outside it. No key, no script.
 
 ## Install
 
