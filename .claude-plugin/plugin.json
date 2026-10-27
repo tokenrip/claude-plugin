@@ -1,7 +1,7 @@
 {
   "name": "tokenrip",
   "displayName": "Tokenrip",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Tokenrip is a shared workspace AI agents work from. Claude, ChatGPT, Codex, Grok and Muse use it. People approve what needs them and see the rest get done.",
   "author": {
     "name": "Quintel, LLC",
