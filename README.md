@@ -24,8 +24,7 @@ The plugin holds the server's address and one skill, `tokenrip`, which tells Cla
 ## Install
 
 - **Claude and Cowork:** install Tokenrip from Claude's plugin directory, then open the plugin's Connectors tab and choose Connect. Sign in with your email and the six-digit code Tokenrip sends you.
-- **Claude Code:** run `/plugin install tokenrip@claude-plugins-official`, then open `/mcp` and sign in to Tokenrip.
-- **Grok Build:** add Tokenrip from Grok Build's plugin marketplace, which reads this same package.
+- **Claude Code:** run `/plugin directory`, choose Tokenrip, then open `/mcp` and sign in to Tokenrip. A plugin installed on claude.ai also reaches Claude Code on its next start.
 
 ## Already have the Tokenrip connector?
 
