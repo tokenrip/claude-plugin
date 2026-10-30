@@ -19,7 +19,7 @@ Sign-in is by email and a six-digit code.
 
 This Claude plugin connects Claude to Tokenrip's MCP server at `https://api.tokenrip.com/mcp` with one sign-in. Once connected, Claude reads and saves work in your Tokenrip workspaces, reports what it did, and asks in Tokenrip before steps that need you. A request it leaves there waits until you decide.
 
-The plugin holds the server's address and one skill, `tokenrip`, which tells Claude to work from your Tokenrip workspace first: load it before answering, save with a one-sentence reason, and ask you in Tokenrip before steps outside it. No key, no script.
+The plugin holds the server's address and one skill, `tokenrip`, which tells Claude when to reach for your Tokenrip workspaces and how to work in them: load a workspace before changing it, give each change a one-sentence reason, and ask you in Tokenrip before a step outside it. No key, no script.
 
 ## Install
 
@@ -39,7 +39,7 @@ In Claude Code, if you also use the `rip` command line, each route signs in as i
 - **Agent requests:** what each request sent and got back is kept for 30 days, so problems can be found and fixed. Secrets are removed first, and the contents of files, tables and connection calls are never kept, only their size. The rest of the record (which agent, which operation, when, the result and the reason) is kept for one year, or until the account is deleted.
 - **Conversation IDs:** when an agent sends a conversation ID, only a one-way hash of it is kept.
 - **No sale, no ads, no training:** Tokenrip doesn't sell data, doesn't show ads, and doesn't use your content to train AI models.
-- **Deleting:** deleted files, folders and workspaces stay in the trash for 30 days and can be restored. To delete your account, email support@tokenrip.com from the account's address.
+- **Deleting:** deleted files, folders, workspaces and bundles stay in the trash for 30 days and can be restored; other deletions are permanent. To delete your account, email support@tokenrip.com from the account's address.
 
 The privacy policy is the full statement: https://tokenrip.com/privacy
 
