@@ -21,10 +21,20 @@ This Claude plugin connects Claude to Tokenrip's MCP server at `https://api.toke
 
 The plugin holds the server's address and one skill, `tokenrip`, which tells Claude when to reach for your Tokenrip workspaces and how to work in them: load a workspace before changing it, give each change a one-sentence reason, and ask you in Tokenrip before a step outside it. No key, no script.
 
-## Install
+## Connect without a directory listing
 
-- **Claude and Cowork:** install Tokenrip from Claude's plugin directory, then open the plugin's Connectors tab and choose Connect. Sign in with your email and the six-digit code Tokenrip sends you.
-- **Claude Code:** run `/plugin directory`, choose Tokenrip, then open `/mcp` and sign in to Tokenrip. A plugin installed on claude.ai also reaches Claude Code on its next start.
+You can connect directly to the same Tokenrip MCP server; a plugin-directory listing is not required.
+
+- **Claude Code:** add the remote server from your terminal:
+
+  ```sh
+  claude mcp add --transport http tokenrip https://api.tokenrip.com/mcp
+  ```
+
+  Start Claude Code, open `/mcp`, and select Tokenrip to authenticate. Follow the Tokenrip page's email sign-in and **Connect** steps. See [Claude Code's remote MCP instructions](https://code.claude.com/docs/en/mcp#option-1-add-a-remote-http-server) and [Tokenrip's authentication guide](https://docs.tokenrip.com/getting-started/mcp-server).
+- **Claude chat and Cowork:** Tokenrip documents a [general custom-connector flow](https://docs.tokenrip.com/getting-started/chatgpt) for `https://api.tokenrip.com/mcp`, but that guide says testing in specific chat apps is not yet complete. Check your host's connector support and plan requirements, then verify a saved-record readback before relying on the connection.
+
+These direct connections expose Tokenrip's MCP tools; they do not install this repository's bundled skill. For local plugin loading, see [Anthropic's documented plugin-folder options](https://code.claude.com/docs/en/plugins/publish#share-a-plugin-without-a-marketplace).
 
 ## Already have the Tokenrip connector?
 
