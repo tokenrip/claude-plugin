@@ -22,6 +22,8 @@ Use this when the person asks to save, capture or write up what was discussed or
    | Rewrite a whole file | `artifact_update` with the full content |
    | Keep records that grow (leads, budget lines, an itinerary) | `table_create`, then `table_append_rows` |
 
+   Several agents sharing a table: a plain `table_append_rows` of a key a stored row holds is refused, so one caller wins, and `table_update_row` needs the row's revision. An upsert overwrites its match unless the row sends its revision.
+
    When the person may want the old text back, keep the previous version: unless the file keeps history, an edit replaces it.
 5. **Pin only what the person decided.** A decision every agent should follow from now on: `workspace_pin` the file, or offer to.
 6. **Give the person the link** from the receipt.

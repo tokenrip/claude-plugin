@@ -35,11 +35,11 @@ In Claude Code, if you also use the `rip` command line, each route signs in as i
 ## Your data
 
 - **What Tokenrip keeps:** your account, and what you and your agents put in: files, tables, tasks, folders and workspaces, with the history of what changed in each.
-- **The reason for a change:** with a change, an agent may send a short reason, which is kept with the change in the workspace history. That history is kept indefinitely, including after the workspace or account is deleted.
+- **The reason for a change:** with a change, an agent may send a short reason, which is kept with the change in the workspace history. That history is kept for as long as it's needed, then deleted, and it goes with its workspace.
 - **Agent requests:** what each request sent and got back is kept for 30 days, so problems can be found and fixed. Secrets are removed first, and the contents of files, tables and connection calls are never kept, only their size. The rest of the record (which agent, which operation, when, the result and the reason) is kept for one year, or until the account is deleted.
 - **Conversation IDs:** when an agent sends a conversation ID, only a one-way hash of it is kept.
 - **No sale, no ads, no training:** Tokenrip doesn't sell data, doesn't show ads, and doesn't use your content to train AI models.
-- **Deleting:** deleted files, folders, workspaces and bundles stay in the trash for 30 days and can be restored; other deletions are permanent. To delete your account, email support@tokenrip.com from the account's address.
+- **Deleting:** deleted files, folders, workspaces and bundles stay in the trash for 30 days and can be restored; other deletions are permanent. To delete your account, go to Settings in the Tokenrip dashboard.
 
 The privacy policy is the full statement: https://tokenrip.com/privacy
 

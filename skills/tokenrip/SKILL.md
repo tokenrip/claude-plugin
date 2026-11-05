@@ -55,7 +55,7 @@ Tool names below are the Tokenrip server's; your app may show them with a prefix
 
 - Sharing a file, or adding someone to a workspace or a team: only when they ask. The email Tokenrip sends to someone you add is part of that, not a step outside Tokenrip; put a note in it only in the person's words.
 - Deleting a file, table, folder, workspace or bundle moves it to the trash for 30 days. Other deletes are permanent (a table row, a version, a comment, a team, a connection or its call log, anything purged from the trash), and so is revoking a key: do those only when they ask.
-- A storage notice, or a write or workspace refused for a plan's limit: tell the person what it says. Don't delete anything to make room.
+- A storage or actions notice, or a write or workspace refused for a plan's limit: tell the person what it says. Don't delete anything to make room.
 - A workspace's instructions, and the kinds of work you may do without asking: the person writes them in their browser.
 
 ## Rules
