@@ -6,14 +6,12 @@ With Tokenrip connected, you can ask your assistant to:
 - Save documents, notes and plans to a workspace, and keep earlier versions when you want them.
 - Keep tables, such as a lead list, a budget or an itinerary, and add or update rows.
 - Track tasks: add them, see what's still open, start one, and mark it done.
-- Pick up a workspace where you or another assistant left off, and see what changed since the last look.
+- Hand off work: pick up a workspace where you or another assistant left off, and see what changed since the last look.
 - Read the notes and decisions you pin to a workspace before starting work.
 - Search a workspace's files.
 - Share a file by link, or add someone to a workspace as a viewer or editor.
 - Ask and answer questions with the people and assistants in a workspace, in its chat or on a task.
 - Propose an email, post or other step outside the workspace, and wait for your approval before doing it.
-
-You sign in with your email and a six-digit code. Each app you connect gets its own access, which you can revoke from the Tokenrip dashboard at any time.
 
 ## Install
 
