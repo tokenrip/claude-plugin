@@ -1,59 +1,47 @@
 # Tokenrip
 
-Tokenrip is a shared workspace AI agents work from. Claude, ChatGPT, Codex, Grok and Muse work from it; people approve what needs them and see the rest get done. Files, tables and to-dos live in one place every connected agent can reach, from any AI app, and each agent reads the pinned decisions before it starts. Work started in one conversation is there for the next one, in any tool, and for the people it is shared with.
+Tokenrip keeps your documents, tables and tasks in workspaces you can come back to. Save a plan in one chat and pick it up in the next, share a workspace with teammates or a client, and connect more than one assistant to the same work. Changes to files, tables and tasks record who made them and why, so whoever picks up the work next can see what happened.
 
-With Tokenrip connected, an assistant can:
-- Save documents, notes and plans to a workspace, with history when you want it.
+With Tokenrip connected, you can ask your assistant to:
+- Save documents, notes and plans to a workspace, and keep earlier versions when you want them.
 - Keep tables, such as a lead list, a budget or an itinerary, and add or update rows.
 - Track tasks: add them, see what's still open, start one, and mark it done.
-- Load a workspace and pick up where another agent left off, including what changed since it last looked and why.
-- Read the pinned decisions, so every agent follows them.
+- Pick up a workspace where you or another assistant left off, and see what changed since the last look.
+- Read the notes and decisions you pin to a workspace before starting work.
 - Search a workspace's files.
-- Share: send a file by link, or add someone to a workspace as a viewer or editor.
+- Share a file by link, or add someone to a workspace as a viewer or editor.
+- Ask and answer questions with the people and assistants in a workspace, in its chat or on a task.
+- Propose an email, post or other step outside the workspace, and wait for your approval before doing it.
 
-Each connection has its own key, and any one can be disconnected from the Tokenrip dashboard. Changes to files, tables and tasks record which agent made them and why. Tools that delete content or let more people see it are marked as such, so apps that support it ask before they run. Saved work stays with its owner: any file can be downloaded, and everything can be read through the API.
-
-Sign-in is by email and a six-digit code.
-
-## What this plugin does
-
-This Claude plugin connects Claude to Tokenrip's MCP server at `https://api.tokenrip.com/mcp` with one sign-in. Once connected, Claude reads and saves work in your Tokenrip workspaces, reports what it did, and asks in Tokenrip before steps that need you. A request it leaves there waits until you decide.
-
-The plugin holds the server's address and one skill, `tokenrip`, which tells Claude when to reach for your Tokenrip workspaces and how to work in them: load a workspace before changing it, give each change a one-sentence reason, and ask you in Tokenrip before a step outside it. No key, no script.
+You sign in with your email and a six-digit code. Each app you connect gets its own access, which you can revoke from the Tokenrip dashboard at any time.
 
 ## Install
 
-- **Claude and Cowork:** install Tokenrip from Claude's plugin directory, then open the plugin's Connectors tab and choose Connect. Sign in with your email and the six-digit code Tokenrip sends you.
-- **Claude Code:** run `/plugin directory`, choose Tokenrip, then open `/mcp` and sign in to Tokenrip. A plugin installed on claude.ai also reaches Claude Code on its next start.
+- **Claude and Cowork:** add Tokenrip from the plugin directory, then open its Connectors tab, choose **Connect** and sign in.
+- **Claude Code:** run `/plugin directory`, choose Tokenrip, then sign in from `/mcp`. A plugin added on claude.ai also reaches Claude Code on its next start.
 
-## Already have the Tokenrip connector?
+Already use the Tokenrip connector? The plugin uses the same server, so you still see one set of Tokenrip tools.
 
-The plugin and the Tokenrip connector use the same server, so installing both still shows one set of Tokenrip tools.
+## Try it
 
-In Claude Code, if you also use the `rip` command line, each route signs in as its own agent. Keeping one route keeps your Agents page simple.
+- What workspaces do I have in Tokenrip?
+- What's left on the task list in our renovation workspace?
+- Pick up where my other agent left off on the launch plan.
 
-## Your data
+## What's included
 
-- **What Tokenrip keeps:** your account, and what you and your agents put in: files, tables, tasks, folders and workspaces, with the history of what changed in each.
-- **The reason for a change:** with a change, an agent may send a short reason, which is kept with the change in the workspace history. That history is kept for as long as it's needed, then deleted, and it goes with its workspace.
-- **Agent requests:** what each request sent and got back is kept for 30 days, so problems can be found and fixed. Secrets are removed first, and the contents of files, tables and connection calls are never kept, only their size. The rest of the record (which agent, which operation, when, the result and the reason) is kept for one year, or until the account is deleted.
-- **Conversation IDs:** when an agent sends a conversation ID, only a one-way hash of it is kept.
-- **No sale, no ads, no training:** Tokenrip doesn't sell data, doesn't show ads, and doesn't use your content to train AI models.
-- **Deleting:** deleted files, folders, workspaces and bundles stay in the trash for 30 days and can be restored; other deletions are permanent. To delete your account, go to Settings in the Tokenrip dashboard.
+- **The Tokenrip MCP server** at `https://api.tokenrip.com/mcp`. You sign in with your email and a six-digit code, and a free account is created if you don't have one.
+- **The `tokenrip` skill**, which tells Claude when to use your workspaces, to say why it changed something, and to ask you before a step outside the workspace.
 
-The privacy policy is the full statement: https://tokenrip.com/privacy
+## Privacy
 
-## Disconnecting
+The plugin connects your assistant to Tokenrip's server at `https://api.tokenrip.com/mcp`. Your assistant sends Tokenrip what you ask it to read or save, a short reason with each change and, when the app provides one, a conversation ID, which is kept only as a one-way hash. Tokenrip keeps your workspaces, deletes what each request sent and got back after 30 days and the rest of its record after a year, never sells your data, and doesn't use your content to train AI models. Uninstalling doesn't revoke access: revoke it on the Agents page of your Tokenrip dashboard.
 
-Uninstalling the plugin does not revoke Tokenrip's access. To revoke it, sign in to your Tokenrip dashboard and revoke the agent on the Agents page.
+[Privacy policy](https://tokenrip.com/privacy) · [Terms](https://tokenrip.com/terms)
 
 ## Links
 
-- Tool reference: https://tokenrip.com/mcp
-- Connecting over MCP: https://docs.tokenrip.com/getting-started/mcp-server
-- Support: email support@tokenrip.com, or see https://tokenrip.com/support
-- Terms: https://tokenrip.com/terms
-- Privacy: https://tokenrip.com/privacy
+[Setup guide](https://tokenrip.com/setup) · [Docs](https://docs.tokenrip.com/getting-started/mcp-server) · [Tool reference](https://tokenrip.com/mcp) · [Support](https://tokenrip.com/support) (support@tokenrip.com)
 
 ## License
 

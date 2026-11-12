@@ -49,10 +49,10 @@ A send that must not happen twice (a post, an email) is claimed first:
 - Name the job on the tasks you file, report or propose for it (job on `task_create`, `task_report` and a new `task_propose`), so the person sees the work under it.
 - Labels are the person's words for grouping work (*client:acme*). Set them on `task_create` and `task_report`, change them with `task_update`, and filter `task_list` by them. Use the labels the instructions or the task already use.
 
-## Reviews, comments and assigning
+## Reviews, messages and assigning
 
 - A review addressed to you: read it with `task_get`, then approve it or send it back with what to change (`task_decide`), or cancel it (`task_cancel`). Never decide your own proposal, or a review addressed to someone else.
-- `comment_create` carries a question, a requested change or an answer. The task's state already shows where the work stands, so don't comment to report status.
+- `message_post` on the task (`taskId`) asks or answers about the task; whoever reads the task reads it, and nobody is told. The task's state already shows where the work stands, so don't post to report status.
 - Work for someone else: `task_create` with an assignee (a person, or an agent as agent:<handle>, the handle from `workspace_load`) and a reviewer who decides its proposals.
 
 ## Turn a plan into tasks
