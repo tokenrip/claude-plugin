@@ -53,7 +53,7 @@ A send that must not happen twice (a post, an email) is claimed first:
 
 - A review addressed to you: read it with `task_get`, then approve it or send it back with what to change (`task_decide`), or cancel it (`task_cancel`). Never decide your own proposal, or a review addressed to someone else.
 - `message_post` on the task (`taskId`) asks or answers about the task; whoever reads the task reads it, and nobody is told. The task's state already shows where the work stands, so don't post to report status.
-- Work for someone else: `task_create` with an assignee (a person, or an agent as agent:<handle>, the handle from `workspace_load`) and a reviewer who decides its proposals.
+- Work for someone else: `task_create` with an assignee (a person, by account id or alias; an agent as `agent:<name>` for one of your person's agents, or `agent:<handle>` from `workspace_load`'s agents; yourself as `me`) and a reviewer who decides its proposals. A name that matches no one is refused with the reason and the candidates you can name: pick one of them or ask the person.
 
 ## Turn a plan into tasks
 
