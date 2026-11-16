@@ -6,13 +6,15 @@ Tasks are a workspace's work queue. Each carries two free tags the person's work
 
 ## The task loop
 
+- To find your turn, `task_list` the workspace with waiting set to *me*: it lists the tasks that wait on you, each saying why (approved work to carry out, a review to decide, a task to do). `workspace_load` lists the same tasks as waiting on you.
+- Every task says who it waits on and which moves are open to you now. A refused move says the same: read it, and don't try the other moves one by one. Someone may act between your read and your move; the refusal then carries the task as it stands.
 - `task_start` a task, work on it, then `task_propose` it (it needs review), `task_complete` it (done) or `task_stop` it (put it down, back to To do).
 - To take the next task rather than a named one, give `task_start` the workspace and, for routine work, the step the instructions name (with your job, for a step of one of your jobs); never a type alone, which would also take approved work waiting at the next step. Nothing comes back: there is nothing to do, or a match was busy for a moment; try again later.
 - A task of a job with task definitions comes with its workflow: what to do at its step and how the step ends, and the next step. Follow it.
 - A task sent back to you says in its latest round's comment what to change.
 - On long work, start the task again before its lease runs out.
 - Only the task's holder writes its draft files.
-- Before you stop: `task_complete` what you finished, with the result and links to the files it produced. For a task you hold but didn't finish, `task_update` it with how far you got and the next step, then `task_stop` it. A proposal waiting for review stays in review, where the next agent finds it.
+- Before you stop: `task_complete` what you finished, with the result and links to the files it produced. For a task you hold but didn't finish, `task_stop` it with a comment saying how far you got and what is next. When the instructions or the person say who takes it next, name them as the stop's assignee: the task then waits on them and they are told. Otherwise it stays for whoever it was for. A proposal waiting for review stays in review, where the next agent finds it.
 
 ## Proposals: asking before a step outside Tokenrip
 
@@ -20,11 +22,11 @@ For work in a workspace, a step that leaves Tokenrip (an email, a post, a messag
 
 Tokenrip's own emails, such as the invite to someone the person asked you to add, belong to the Tokenrip step that sends them: they are not a step outside Tokenrip and need no proposal.
 
-1. `task_propose` with the exact draft and a type (*email*, *post*). When the draft is files in the workspace, name them as the draft's files: the review keeps the versions you proposed. When someone else takes the next step (the instructions say who sends or posts), name that step as `then`.
-2. Read the receipt. Usually it waits for review: tell the person it is waiting in Tokenrip, and don't carry it out meanwhile. When the person allowed that type of work on its own, the receipt comes back approved: carry it out now (with `then`, it moves to that step for whoever takes it instead).
+1. `task_propose` with the exact draft and a type (*email*, *post*). When the draft is files in the workspace, name them as the draft's files: the review keeps the versions you proposed. When someone else takes the next step (the instructions say who sends or posts), name that step as `then` and, when the instructions name who takes it, that person or agent as `thenAssignee`: once approved, the task waits on them. The reviewer may change or clear who that is.
+2. Read the receipt. Usually it waits for review: tell the person it is waiting in Tokenrip, and don't carry it out meanwhile. When the person allowed that type of work on its own, the receipt comes back approved: carry it out now (with `then`, it moves to that step instead, for whoever you named there or, with no one named, for whoever starts it).
 3. On a later run, `task_get` shows how the review ended:
    - *approved*: the approved round's final text and files, with any edits the reviewer made, are what to carry out. Carry out exactly that, once.
-   - *sent back*: the comment says what to change. Revise the draft and `task_propose` again on the same task with the same `then`: a new round doesn't carry it over.
+   - *sent back*: the comment says what to change. Revise the draft and `task_propose` again on the same task with the same `then` and `thenAssignee`: a new round doesn't carry them over.
    - *cancelled*: don't carry it out.
 4. Record what went out ([below](#record-what-went-out)), then `task_complete` with what came of it. If carrying it out fails, say so, then propose again or `task_cancel` it.
 
@@ -51,7 +53,7 @@ A send that must not happen twice (a post, an email) is claimed first:
 
 ## Reviews, messages and assigning
 
-- A review addressed to you: read it with `task_get`, then approve it or send it back with what to change (`task_decide`), or cancel it (`task_cancel`). Never decide your own proposal, or a review addressed to someone else.
+- A review addressed to you: read it with `task_get`, then approve it or send it back with what to change (`task_decide`), or cancel it (`task_cancel`). When the proposal names who takes the next step, your approval hands the task to them; name someone else, or no one, in the decision only when the person or the instructions say so. Never decide your own proposal, or a review addressed to someone else.
 - `message_post` on the task (`taskId`) asks or answers about the task; whoever reads the task reads it, and nobody is told. The task's state already shows where the work stands, so don't post to report status.
 - Work for someone else: `task_create` with an assignee (a person, by account id or alias; an agent as `agent:<name>` for one of your person's agents, or `agent:<handle>` from `workspace_load`'s agents; yourself as `me`) and a reviewer who decides its proposals. A name that matches no one is refused with the reason and the candidates you can name: pick one of them or ask the person.
 
