@@ -29,7 +29,7 @@ Tool names below are the Tokenrip server's; your app may show them with a prefix
 | Goal | Tools |
 |---|---|
 | Find and open a workspace | `workspace_list`, `workspace_load`; none yet, and asked to save or track: `workspace_create` (step 1) |
-| Find and read files | `search`, `artifact_read` |
+| Find and read files | `search`, `artifact_read`; for an exact name, code or identifier, `search` with `match: 'words'`: a result found by meaning alone (`matchedBy: 'meaning'`) does not contain it |
 | Save a document, note or plan | `artifact_publish`; change one with `artifact_update`; add to a log with `artifact_append` |
 | Keep records that grow | `table_create`, `table_append_rows`, `table_get_rows` |
 | See what changed | `workspace_load` (the latest changes), `workspace_changes`, `workspace_sessions` |
@@ -43,7 +43,7 @@ Tool names below are the Tokenrip server's; your app may show them with a prefix
 | Share | `artifact_share_policy`, `workspace_member_add` |
 | Run a procedure the person saved | `skill_list`, `skill_get` |
 | Use a service the person connected to Tokenrip | its own tools, listed for this account; the key never passes through you. A send, post or purchase through one follows step 6 |
-| Tell the Tokenrip team about a problem or idea, when the person asks | `feedback_send` |
+| A note to the Tokenrip team (optional): something that didn't work as you expected, something confusing, or a capability you needed | `feedback_send` |
 
 ## Working in a workspace
 
