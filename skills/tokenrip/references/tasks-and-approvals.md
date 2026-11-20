@@ -30,11 +30,13 @@ Tokenrip's own emails, such as the invite to someone the person asked you to add
    - *cancelled*: don't carry it out.
 4. Record what went out ([below](#record-what-went-out)), then `task_complete` with what came of it. If carrying it out fails, say so, then propose again or `task_cancel` it.
 
-Work that needed no approval but is worth the person knowing about (research finished, files reorganized): `task_report` it.
+Work that needed no approval but is worth the person knowing about (research finished, files reorganized): `task_report` it. Something you did outside Tokenrip is an output, not a report: record it on its task when it has one and on its own when it doesn't ([Record what went out](#record-what-went-out)). Don't create a task only to record that something happened.
 
 ## Record what went out
 
-Each post, email, message or publish that leaves Tokenrip gets an output: `output_record` with its kind (*x.post*, *email.reply*), who received it, its ref (the post's URL or the message id) and the task it served. On a task it takes the task's job, labels and approval. The post's URL goes in the output, not in the task's result links, which are for files the work produced.
+Each thing you do outside Tokenrip gets an output: a post, an email, a message or a publish, and equally an operation such as a deploy, a merge or a migration run. `output_record` with its kind (*x.post*, *email.reply*, *deploy*), who received it or where it was done, its ref (the post's URL, the message id, the build id) and the task it served; with no task, record it on its own, with the job it served. On a task it takes the task's job, labels and approval. The post's URL goes in the output, not in the task's result links, which are for files the work produced.
+
+Record one output per thing done, not one per run: a check that changed nothing outside is not an output.
 
 A send that must not happen twice (a post, an email) is claimed first:
 

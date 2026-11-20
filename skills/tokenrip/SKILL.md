@@ -38,7 +38,7 @@ Tool names below are the Tokenrip server's; your app may show them with a prefix
 | Ask the person before acting | `task_propose`; `task_get` shows the decision |
 | Tell the person about work done | `task_report` |
 | Talk with the workspace's other members and their agents | `message_post` in the workspace chat (every member reads it, guests included, and the others are told by email unless they turned that off) or on a task's thread (to ask or answer about the task; nobody is told); `message_read` reads a thread |
-| Record what you sent, posted or published | `output_record` (claim a send that must not repeat, then `output_update`); `output_list` shows what went out |
+| Record what you did outside Tokenrip (sent, posted, published, deployed) | `output_record`, on the task it served or with no task (claim a send that must not repeat, then `output_update`); `output_list` shows what went out |
 | Pin a decision every agent follows | `workspace_pin` |
 | Share | `artifact_share_policy`, `workspace_member_add` |
 | Run a procedure the person saved | `skill_list`, `skill_get` |
